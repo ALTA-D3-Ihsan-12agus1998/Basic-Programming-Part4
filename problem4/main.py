@@ -1,5 +1,13 @@
-def ubah_huruf(sentence):
+def ubah_huruf(sentence) :
+    alphabet_bob = "KLMNOPQRSTUVWXYZABCDEFGHIJ"
     pattern = ""
+    for char in sentence :
+        if char.isalpha() :
+            index = ord(char.upper()) - ord('A')
+            enkripsi_char = alphabet_bob[index]
+            pattern += enkripsi_char
+        else :
+            pattern += char
     return pattern
 
 if __name__ == '__main__':
