@@ -1,14 +1,14 @@
 def mean_median(array_input):
-    array_input.sort()
-    length = len(array_input)
-    
-    if length % 2 == 0:
-        median = (array_input[length // 2 - 1] + array_input[length // 2]) / 2
+    if len(array_input) == 0:
+        return None
+    total = sum(array_input)
+    mean = total / len(array_input)
+    n = len(array_input)
+    if n % 2 == 0:
+        median = (array_input[n // 2 - 1] + array_input[n // 2]) / 2
     else:
-        median = array_input[length // 2]
-    
-    mean = sum(array_input) / length
-    
+        median = array_input[n // 2]
+    mean = round(mean, 1)
     return (mean, median)
 
 if __name__ == '__main__':

@@ -1,16 +1,15 @@
-def draw_xyz(N):
+def draw_xyz(N) :
     pattern = ""
-    for i in range(N):
-        row = ""
-        for j in range(N):
-            if (i + j) % 3 == 0:
-                row += "Y "
-            elif (i + j) % 3 == 1:
-                row += "Z "
-            else:
-                row += "X "
-        pattern += row.strip() + "\n"
-    return pattern.strip()
+    for i in range(1, N ** 2 + 1) :
+        if i % 3 == 0 :
+            pattern += "X "
+        elif i % 2 == 1 :
+            pattern += "Y "
+        else :
+            pattern += "Z "
+        if i % N == 0 :
+            pattern += "\n"
+    return pattern
 
 if __name__ == '__main__':
     print(draw_xyz(3))
